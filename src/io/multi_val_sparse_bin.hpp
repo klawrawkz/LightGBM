@@ -71,7 +71,7 @@ public:
         offsets.push_back(offsets.back() + t_data_[tid].size());
       }
       data_.resize(row_ptr_[num_data_]);
-#pragma omp parallel for schedule(static)
+      #pragma omp parallel for schedule(static)
       for (int tid = 0; tid < static_cast<int>(t_data_.size()); ++tid) {
         std::copy_n(t_data_[tid].data(), t_data_[tid].size(),
                     data_.data() + offsets[tid]);

@@ -434,14 +434,14 @@ public:
   * \brief Binary size of this histogram
   */
   int SizeOfHistgram() const {
-    return (meta_->num_bin - meta_->offset) * KHistEntrySize;
+    return (meta_->num_bin - meta_->offset) * kHistEntrySize;
   }
 
   /*!
   * \brief Restore histogram from memory
   */
   void FromMemory(char* memory_data) {
-    std::memcpy(data_, memory_data, (meta_->num_bin - meta_->offset) * KHistEntrySize);
+    std::memcpy(data_, memory_data, (meta_->num_bin - meta_->offset) * kHistEntrySize);
   }
 
   /*!
